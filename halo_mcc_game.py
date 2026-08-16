@@ -37,7 +37,7 @@ class HaloMCCGame(Game):
 def optional_game_constraint_templates(self) -> List[GameObjectiveTemplate]:
     return[
         GameObjectiveTemplate(
-            label="Without dying"
+            label="Without dying",
             data=dict(),
         )
     ]
@@ -518,7 +518,7 @@ class MCCEnabledGames(OptionSet):
     ]
     default = valid_keys
 
-class MCCIncludeSkulls(Toggle):
+class MCCIncludeSkulls(DefaultOnToggle):
     """
     Enables/disables Skull objectives.
     """
@@ -546,25 +546,25 @@ class MCCExcludeSkulls(OptionSet):
     ]
     default = ""
 
-class MCCIncludeCampaigns(Toggle):
+class MCCIncludeCampaigns(DefaultOnToggle):
     """
     Enables/disables campaign objectives.
     """
     display_name = "Campaign Objectives"
 
-class MCCIncludeFirefight(Toggle):
+class MCCIncludeFirefight(DefaultOnToggle):
     """
     Enables/disables Firefight objectives. These will only take effect if Halo 3 ODST or Halo Reach are enabled in the games list.
     """
     display_name = "Firefight Objectives"
 
-class MCCIncludeKillcount(Toggle):
+class MCCIncludeKillcount(DefaultOnToggle):
     """
     Enables/disables Killcount objectives. (Kill a certain number of a specific enemy). Only enable with all games.
     """
     display_name = "Killcount Objectives"
 
-class MCCIncludeWeapons(Toggle):
+class MCCIncludeWeapons(DefaultOnToggle):
     """
     Enables/disables Weapon objectives. (Kill a certain number of enemies with a specific weapon). Only enable with all games.
     """
