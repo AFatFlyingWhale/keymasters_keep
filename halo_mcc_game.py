@@ -34,75 +34,75 @@ class HaloMCCGame(Game):
     is_adult_only_or_unrated = False
     options_cls = HaloMCCArchipelagoOptions
 
-def optional_game_constraint_templates(self) -> List[GameObjectiveTemplate]:
-    return[
-        GameObjectiveTemplate(
-            label="Without dying",
-            data=dict(),
-        )
-    ]
+    def optional_game_constraint_templates(self) -> List[GameObjectiveTemplate]:
+        return[
+            GameObjectiveTemplate(
+                label="Without dying",
+                data=dict(),
+           )
+        ]
 
-def game_objective_templates(self) -> List[GameObjectiveTemplate]:
-    return [
-        GameObjectiveTemplate(
-            label="Beat MISSION with SKULLS enabled",
-            data={
-                "MISSION": (self.missions, 1),
-                "SKULLS": (self.skulls, 1),
-            },
-            is_time_consuming=False,
-            is_difficult=False,
-            weight=2
-        ),
-        GameObjectiveTemplate(
-            label="Beat CAMPAIGN",
-            data={
-                "CAMPAIGN": (self.campaign, 1),
-            },
-            is_time_consuming=False,
-            is_difficult=False,
-            weight=1
-        ),
-        GameObjectiveTemplate(
-            label="Beat a firefight game on FIREFIGHT",
-            data={
-                "FIREFIGHT": (self.firefight, 1),
-            },
-            is_time_consuming=False,
-            is_difficult=False,
-            weight=2
-        ),
-        GameObjectiveTemplate(
-            label="Kill NUMBER ENEMY",
-            data={
-                "NUMBER": (self.enemy_numbers, 1),
-                "ENEMY": (self.enemies, 1),
-            },
-            is_time_consuming=False,
-            is_difficult=False,
-            weight=2
-        ),
-        GameObjectiveTemplate(
-            label="Use WEAPON to kill NUMBER of enemies",
-            data={
-                "WEAPON": (self.weapons, 1),
-                "NUMBER": (self.weapon_numbers, 1),
-            },
-            is_time_consuming=False,
-            is_difficult=False,
-            weight=2
-        ),
-        GameObjectiveTemplate(
-            label="Beat MISSION on DIFFICULTY",
-            data={
-                "MISSION": (self.missions, 1),
-                "DIFFICULTY": (self.difficulty, 1)
-            },
-            is_time_consuming=False,
-            is_difficult=False,
-            weight=4,
-        ),
-    ]
+    def game_objective_templates(self) -> List[GameObjectiveTemplate]:
+        return [
+            GameObjectiveTemplate(
+                label="Beat MISSION with SKULLS enabled",
+                data={
+                    "MISSION": (self.missions, 1),
+                    "SKULLS": (self.skulls, 1),
+                },
+                is_time_consuming=False,
+                is_difficult=False,
+                weight=2
+            ),
+            GameObjectiveTemplate(
+                label="Beat CAMPAIGN",
+                data={
+                    "CAMPAIGN": (self.campaign, 1),
+                },
+                is_time_consuming=False,
+                is_difficult=False,
+                weight=1
+            ),
+            GameObjectiveTemplate(
+                label="Beat a firefight game on FIREFIGHT",
+                data={
+                    "FIREFIGHT": (self.firefight, 1),
+                },
+                is_time_consuming=False,
+                is_difficult=False,
+                weight=2
+            ),
+            GameObjectiveTemplate(
+                label="Kill NUMBER ENEMY",
+                data={
+                    "NUMBER": (self.enemy_numbers, 1),
+                    "ENEMY": (self.enemies, 1),
+                },
+                is_time_consuming=False,
+                is_difficult=False,
+                weight=2
+            ),
+            GameObjectiveTemplate(
+                label="Use WEAPON to kill NUMBER of enemies",
+                data={
+                    "WEAPON": (self.weapons, 1),
+                    "NUMBER": (self.weapon_numbers, 1),
+                },
+                is_time_consuming=False,
+                is_difficult=False,
+                weight=2
+            ),
+            GameObjectiveTemplate(
+                label="Beat MISSION on DIFFICULTY",
+                data={
+                    "MISSION": (self.missions, 1),
+                    "DIFFICULTY": (self.difficulty, 1)
+                },
+                is_time_consuming=False,
+                is_difficult=False,
+                weight=4,
+            ),
+        ]
 
 # Difficulties
 
