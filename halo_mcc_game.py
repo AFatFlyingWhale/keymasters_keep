@@ -37,7 +37,7 @@ class HaloMCCGame(Game):
 def optional_game_constraint_templates(self) -> List[GameObjectiveTemplate]:
     return[
         GameObjectiveTemplate(
-            label="Without dying"
+            label="Without dying",
             data=dict(),
         )
     ]
