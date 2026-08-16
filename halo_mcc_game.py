@@ -57,7 +57,7 @@ class HaloMCCGame(Game):
             GameObjectiveTemplate(
                 label="Beat CAMPAIGN",
                 data={
-                    "CAMPAIGN": (self.campaign, 1),
+                    "CAMPAIGN": (self.campaigns, 1),
                 },
                 is_time_consuming=False,
                 is_difficult=False,
